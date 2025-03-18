@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pendaftaran Mahasiswa Sederhana</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      h1 {
+        text-align: center;
+        color: #333;
+      }
+      .form-group {
+        margin-bottom: 15px;
+      }
+      label {
+        display: block;
+        margin-bottom: 5px;
+      }
+      input,
+      select {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+      }
+      .error {
+        color: red;
+        font-size: 12px;
+        display: none;
+      }
+      button {
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+      }
+      th {
+        background-color: #f2f2f2;
+      }
+      #success-message {
+        background-color: #dff0d8;
+        color: #3c763d;
+        padding: 10px;
+        margin-top: 10px;
+        border-radius: 4px;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Pendaftaran Mahasiswa</h1>
+
+    <form id="studentForm">
+      <div class="form-group">
+        <label for="npm">NPM (Nomor Pokok Mahasiswa):</label>
+        <input type="text" id="npm" name="npm" />
+        <div id="npmError" class="error">NPM harus terdiri dari 10 digit</div>
+      </div>
+
+      <div class="form-group">
+        <label for="name">Nama:</label>
+        <input type="text" id="name" name="name" />
+        <div id="nameError" class="error">Nama harus diisi</div>
+      </div>
+
+      <div class="form-group">
+        <label for="faculty">Fakultas:</label>
+        <select id="faculty" name="faculty">
+          <option value="">-- Pilih Fakultas --</option>
+          <option value="Ilmu Komputer">Ilmu Komputer</option>
+          <option value="Teknik">Teknik</option>
+          <option value="Bisnis">Bisnis</option>
+          <option value="Seni">Seni</option>
+        </select>
+        <div id="facultyError" class="error">Silakan pilih fakultas</div>
+      </div>
+
+      <button type="submit">Daftar</button>
+    </form>
+
+    <div id="success-message">Pendaftaran berhasil!</div>
+
+    <h2>Mahasiswa Terdaftar</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>NPM</th>
+          <th>Nama</th>
+          <th>Fakultas</th>
+        </tr>
+      </thead>
+      <tbody id="studentList">
+        <!-- Mahasiswa akan ditambahkan di sini -->
+      </tbody>
+    </table>
+  </body>
+</html>
